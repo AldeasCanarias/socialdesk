@@ -38,6 +38,15 @@ function et_setup_theme() {
 	require_once( $template_directory . '/post_thumbnails_divi.php' );
 
 	include( $template_directory . '/includes/widgets.php' );
+	
+	add_filter('upload_mimes', 'agregar_extensiones');
+
+	function agregar_extensiones ( $existing_mimes=array() ) {   
+		// Añade la extensión y el tipo mime que le corresponda
+		$existing_mimes['stl'] = 'application/stl';
+		$existing_mimes['dxf'] = 'application/dxf'; 
+		return $existing_mimes;
+	}
 
 	register_nav_menus( array(
 		'primary-menu'   => esc_html__( 'Primary Menu', 'Divi' ),
