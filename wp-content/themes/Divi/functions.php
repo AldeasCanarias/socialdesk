@@ -38,13 +38,13 @@ function et_setup_theme() {
 	require_once( $template_directory . '/post_thumbnails_divi.php' );
 
 	include( $template_directory . '/includes/widgets.php' );
-	
+
 	add_filter('upload_mimes', 'agregar_extensiones');
 
-	function agregar_extensiones ( $existing_mimes=array() ) {   
+	function agregar_extensiones ( $existing_mimes=array() ) {
 		// Añade la extensión y el tipo mime que le corresponda
 		$existing_mimes['stl'] = 'application/stl';
-		$existing_mimes['dxf'] = 'application/dxf'; 
+		$existing_mimes['dxf'] = 'application/dxf';
 		return $existing_mimes;
 	}
 
@@ -6938,7 +6938,7 @@ function et_divi_add_customizer_css() {
 				sanitize_text_field( $et_one_font_languages[$site_domain]['font_family'] )
 			);
 		} else if ( ! in_array( $et_gf_heading_font, array( '', 'none' ) ) || ! in_array( $et_gf_body_font, array( '', 'none' ) ) || ! in_array( $et_gf_buttons_font, array( '', 'none' ) ) || ! in_array( $et_gf_primary_nav_font, array( '', 'none' ) ) || ! in_array( $et_gf_secondary_nav_font, array( '', 'none' ) ) || ! in_array( $et_gf_slide_nav_font, array( '', 'none' ) ) ) {
-			if ( ! in_array( $et_gf_heading_font, array( '', 'none' ) ) ) { 
+			if ( ! in_array( $et_gf_heading_font, array( '', 'none' ) ) ) {
 
 				?>
 				h1, h2, h3, h4, h5, h6 {
